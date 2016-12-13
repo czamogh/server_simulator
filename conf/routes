@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.AppController.index()
+POST    /app                        controllers.AppController.addApp()
+GET     /deeplink1                  controllers.AppController.getDeferredDeepLink1()
+GET     /deeplink2                  controllers.AppController.getDeferredDeepLink2()
+GET     /deeplink3                  controllers.AppController.getDeferredDeepLink3()
+GET     /reset                      controllers.AppController.reset()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

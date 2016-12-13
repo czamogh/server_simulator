@@ -1,0 +1,22 @@
+@(apps: List[App])
+
+@main("Welcome to Play") {
+    <form method="POST" action="@routes.AppController.addApp()">
+        <input type="text" name="id" placeholder="ID"/>
+        <input type="text" name="deepLink" placeholder="Deep link"/>
+        <button>Register deep link</button>
+    </form>
+
+    <table cellpadding="5">
+        <tr>
+            <th align="left">ID</th>
+            <th align="left">Deep link</th>
+        </tr>
+    @for(app <- apps) {
+        <tr>
+            <td>@app.id</td>
+            <td>@app.deepLink</td>
+        </tr>
+    }
+    </table>
+}
